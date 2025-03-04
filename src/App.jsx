@@ -1,8 +1,20 @@
-import { Typography } from "@mui/material";
 import React from "react";
+import { Button } from "@mui/material";
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
-  return <Typography variant="subtitle">Hello World!</Typography>;
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={toggleTheme}
+        sx={{ mt: 2, backgroundColor: theme.pink.background, color: "#000" }}
+      >
+        Toggle Theme
+      </Button>
+    </>
+  );
 }
 
 export default App;
